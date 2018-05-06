@@ -35,8 +35,7 @@ bee run
 Access  *http://localhost:8080/metrics* in browser.
 
 ## Add Counter 
-New a Controller name CodeController or any other name same in router.go. Then import 
- ***"github.com/prometheus/client_golang/prometheus"*** . 
+New a controller and import "github.com/prometheus/client_golang/prometheus" . 
 
 the test controller  should look like this: 
 
@@ -67,17 +66,18 @@ func (c *CodeController) Get() {
 ...
 # HELP http_request_total_code total request code controller
 # TYPE http_request_total_code counter
-http_request_total_code 
+http_request_total_code 0
 ...
 ```
 it means works!
 
-+ Access ***http://localhost:8080/code***, it will turn out that ***http_request_total_code*** increasing.
++ Access ***http://localhost:8080/code***, it will turn out that ***http_request_total_code*** is increasing. Go to "http://localhost:8080/metrics" again. Emm.... It works well:
+
 ```
 ...
 # HELP http_request_total_code total request code controller
 # TYPE http_request_total_code counter
-http_request_total_code 
+http_request_total_code 1
 ...
 ```
 Well done!
