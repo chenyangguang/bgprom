@@ -34,7 +34,7 @@ bee run
 
 Access  *http://localhost:8080/metrics* in browser.
 
-## Add Counter 
+## Add Counter for test
 New a controller and import "github.com/prometheus/client_golang/prometheus" . 
 
 the test controller  should look like this: 
